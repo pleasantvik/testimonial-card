@@ -1,0 +1,139 @@
+:root {
+  --dark-blue: hsl(240, 38%, 20%);
+  --grayish-blue: hsl(240, 18%, 77%);
+  --grayish-blue-a: rgb(186, 186, 207);
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.slider {
+  max-width: 110rem;
+  margin: 15rem auto;
+  position: relative;
+  overflow: hidden;
+  height: 80rem;
+  font-size: 3.2rem;
+  color: var(--dark-blue);
+
+  /* background-image: url(images/pattern-bg.svg);
+  background-position: top;
+  background-size: cover; */
+}
+
+.slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  transition: all 0.5s;
+
+  height: 60rem;
+  padding: 3rem 4rem;
+}
+
+.slide__work {
+  color: var(--grayish-blue);
+}
+.quotation-mark {
+  position: absolute;
+  left: 5rem;
+}
+.btn-container {
+  position: absolute;
+  bottom: 20rem;
+  right: 40%;
+}
+
+.slide__btn {
+  height: 6rem;
+  width: 12rem;
+  cursor: pointer;
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* padding: 2rem; */
+}
+
+.slide__text {
+  font-size: 3.2rem;
+  width: 110%;
+  color: rgba(186, 186, 207, 0.9);
+  /* margin-bottom: 100px; */
+}
+
+.left,
+.right {
+  display: inline-block;
+}
+
+.left {
+  margin-right: 2rem;
+}
+
+.slide__img {
+  display: block;
+  margin-left: -3rem;
+  z-index: -2;
+  box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.6);
+}
+
+@media only screen and (max-width: 50em) {
+  .slider {
+    height: 100rem;
+  }
+  .slide {
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide__text {
+    /* font-size: 2rem; */
+    width: 80%;
+    margin-top: 2rem;
+    text-align: center;
+    margin: 4rem auto;
+  }
+
+  .slide__author,
+  .slide__work {
+    display: block;
+    text-align: center;
+  }
+
+  .slide__work {
+    margin-top: 1rem;
+  }
+
+  .slide__img {
+    margin-bottom: 2rem;
+    object-fit: cover;
+  }
+
+  .quotation-mark {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .btn-container {
+    bottom: 35rem;
+  }
+
+  blockquote {
+    order: 1;
+  }
+}
